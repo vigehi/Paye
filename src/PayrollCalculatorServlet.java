@@ -1,15 +1,22 @@
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+ @WebServlet("/payroll-calculator")
 public class PayrollCalculatorServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+public void doGet(HttpServletRequest req, HttpServletResponse resp) 
+throws ServletException, IOException {
+    doPost(req, resp);
+  }
+
+public void doPost(HttpServletRequest request, HttpServletResponse response) 
+throws ServletException, IOException {
     String basicSalary = request.getParameter("basic-salary");
     String benefits = request.getParameter("benefits");
     String nssfContribution = request.getParameter("nssf-contribution");
@@ -41,6 +48,8 @@ public class PayrollCalculatorServlet extends HttpServlet {
 
     request.getRequestDispatcher("payroll.jsp").forward(request, response);
   }
-
+  public static void main(String[] args) {
+    System.out.println("This is a main method added to the PayrollCalculatorServlet class");
+  }
 }
 
