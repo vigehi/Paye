@@ -6,15 +6,6 @@
     <meta charset="UTF-8">
     <title>Payroll Calculator</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <style>
-      .period {
-        background-color: white;
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-        margin: 10px 10px 10px 0;
-      }
-    </style>
   </head>
 
   <body>

@@ -26,10 +26,9 @@ public class PayrollCalculatorServlet extends HttpServlet {
     String netPay = request.getParameter("net-pay");
 
     double basicSalaryValue = Double.parseDouble(basicSalary);
-
     double benefitsValue = Double.parseDouble(benefits);
-    System.out.println("benefitsValue: " + benefitsValue);
-    // Calculate NSSF contribution based on monthly salary
+
+    // Calculate NSSF contribution based on basic salary
     double nssfContribution;
     if (basicSalaryValue <= 10000) {
       nssfContribution = 360;
@@ -41,7 +40,14 @@ public class PayrollCalculatorServlet extends HttpServlet {
     double taxableIncomeValue = basicSalaryValue + benefitsValue - nssfContribution;
     double personalReliefValue = 2400;
     double taxableIncomeAfterRelief = taxableIncomeValue - personalReliefValue;
-    double payeValue = taxableIncomeAfterRelief * 0.3;
+    double payeValue;
+    if (taxableIncomeAfterRelief <= 10000) {
+      payeValue = taxableIncomeAfterRelief * 0.1;
+    } else if (taxableIncomeAfterRelief <= 18000) {
+      payeValue = taxableIncomeAfterRelief * 0.2;
+    } else {
+      payeValue = taxableIncomeAfterRelief * 0.3;
+    }
     double nhifContributionValue = 500;
     double netPayValue = basicSalaryValue + benefitsValue - nssfContribution - payeValue
         - nhifContributionValue;

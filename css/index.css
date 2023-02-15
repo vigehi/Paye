@@ -6,22 +6,13 @@ form {
 }
 
 .period {
-  background-color: rgb(194, 122, 28);
+  background-color: white;
   display: flex;
   flex-direction: row;
-    }
-/* 
-form > .period {
-  background-color: rgb(194, 122, 28);
-  display: flex;
-  flex-direction: row;
-} */
+  gap: 15px;
+  margin: 10px 10px 10px 0;
+}
 
-/* .period {
-  display: flex;
-  justify-content: space-between;
-  
-} */
 
 label {
   font-weight: bold;
