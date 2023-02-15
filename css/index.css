@@ -2,7 +2,26 @@ form {
   width: 500px;
   margin: 0 auto;
   padding: 20px;
+  border: 1px solid black;
 }
+
+.period {
+  background-color: rgb(194, 122, 28);
+  display: flex;
+  flex-direction: row;
+    }
+/* 
+form > .period {
+  background-color: rgb(194, 122, 28);
+  display: flex;
+  flex-direction: row;
+} */
+
+/* .period {
+  display: flex;
+  justify-content: space-between;
+  
+} */
 
 label {
   font-weight: bold;
@@ -31,3 +50,5 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #3e8e41;
 }
+
+
