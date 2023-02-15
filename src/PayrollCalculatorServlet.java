@@ -39,10 +39,10 @@ public class PayrollCalculatorServlet extends HttpServlet {
       nssfContribution = 1080;
     }
     double taxableIncomeValue = basicSalaryValue + benefitsValue - nssfContribution;
-    double personalReliefValue = Double.parseDouble(personalRelief);
+    double personalReliefValue = 2400;
     double taxableIncomeAfterRelief = taxableIncomeValue - personalReliefValue;
     double payeValue = taxableIncomeAfterRelief * 0.3;
-    double nhifContributionValue = Double.parseDouble(nhifContribution);
+    double nhifContributionValue = 500;
     double netPayValue = basicSalaryValue + benefitsValue - nssfContribution - payeValue
         - nhifContributionValue;
 
