@@ -19,11 +19,6 @@ public class PayrollCalculatorServlet extends HttpServlet {
       throws ServletException, IOException {
     String basicSalary = request.getParameter("basic-salary");
     String benefits = request.getParameter("benefits");
-    String taxableIncome = request.getParameter("taxable-income");
-    String personalRelief = request.getParameter("personal-relief");
-    String paye = request.getParameter("paye");
-    String nhifContribution = request.getParameter("nhif-contribution");
-    String netPay = request.getParameter("net-pay");
 
     double basicSalaryValue = Double.parseDouble(basicSalary);
     double benefitsValue = Double.parseDouble(benefits);
