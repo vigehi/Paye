@@ -13,23 +13,34 @@ public class PayrollCalculator extends JFrame {
 
   private JRadioButton monthlyRadioButton = new JRadioButton("Month", true);
   private JRadioButton yearlyRadioButton = new JRadioButton("Year");
+  private JRadioButton newRate = new JRadioButton("New NSSF Rate", true);
+  private JRadioButton oldRate = new JRadioButton("Old NSSF Rate");
 
   public PayrollCalculator() {
     super("Payroll Calculator");
     try {
-      UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+    //   UIManager.setLookAndFeel(new SubstanceLookAndFeel());
     } catch (Exception e) {
       // handle the exception
     }
 
-    JPanel periodPanel = new JPanel(new GridLayout(1, 4));
+    JPanel periodPanel = new JPanel(new GridLayout(1, 0));
     periodPanel.add(new JLabel("Pay Period:"));
     periodPanel.add(monthlyRadioButton);
     periodPanel.add(yearlyRadioButton);
 
     ButtonGroup periodButtonGroup = new ButtonGroup();
-    periodButtonGroup.add(monthlyRadioButton);
-    periodButtonGroup.add(yearlyRadioButton);
+    periodButtonGroup.add(newRate);
+    periodButtonGroup.add(oldRate);
+
+    JPanel ratePanel = new JPanel(new GridLayout(1, 1));
+    ratePanel.add(new JLabel("Rates:"));
+    ratePanel.add(newRate);
+    ratePanel.add(oldRate);
+
+    ButtonGroup rateButtonGroup = new ButtonGroup();
+    rateButtonGroup.add(newRate);
+    rateButtonGroup.add(oldRate);
 
     JPanel formPanel = new JPanel(new GridLayout(8, 2));
     formPanel.add(new JLabel("Basic Salary:"));
@@ -50,18 +61,21 @@ public class PayrollCalculator extends JFrame {
     formPanel.add(netPayField);
     JPanel buttonPanel = new JPanel();
     buttonPanel.add(new JButton("Calculate"));
-
-
+    
+    // Create a container panel to hold the ratePanel and formPanel
+    JPanel centerPanel = new JPanel(new GridLayout(2, 1));
+    centerPanel.add(ratePanel);
+    centerPanel.add(formPanel);
     JPanel wrappedFormPanel = new JPanel(new BorderLayout());
-    wrappedFormPanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+    wrappedFormPanel.setBorder(
+      BorderFactory.createEmptyBorder(100, 100, 100, 100)
+    );
     wrappedFormPanel.add(periodPanel, BorderLayout.NORTH);
-    wrappedFormPanel.add(formPanel, BorderLayout.CENTER);
+    wrappedFormPanel.add(centerPanel, BorderLayout.CENTER);
     wrappedFormPanel.add(buttonPanel, BorderLayout.SOUTH);
 
     // add the wrapped form panel to the frame
     add(wrappedFormPanel, BorderLayout.CENTER);
-
-    
 
     monthlyRadioButton.addActionListener(
       e -> {
