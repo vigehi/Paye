@@ -1,5 +1,5 @@
 Main-Class: PayrollCalculatorServlet
-Class-Path: ../WEB-INF/lib/javax.servlet-3.0.jar
+Class-Path: ../WEB-INF/lib/jakarta.servlet-api-5.0.0.jar
 
 
 

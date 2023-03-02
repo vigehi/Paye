@@ -2,7 +2,17 @@ form {
   width: 500px;
   margin: 0 auto;
   padding: 20px;
+  border: 1px solid black;
 }
+
+.period {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin: 10px 10px 10px 0;
+}
+
 
 label {
   font-weight: bold;
@@ -19,15 +29,19 @@ input[type="text"], select {
 }
 
 input[type="submit"] {
-  width: 100%;
+  width: 50%;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #1b98ca;
   color: white;
   font-size: 16px;
   cursor: pointer;
   border: none;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 input[type="submit"]:hover {
-  background-color: #3e8e41;
+  background-color: #073847;
 }
+
+

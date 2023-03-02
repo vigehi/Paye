@@ -9,14 +9,14 @@
 </head>
 <body>
   <h1>Payroll Calculator Results</h1>
-  <p>Pay Period: <%= request.getParameter("pay-period") %></p>
-  <p>Basic Salary: <%= request.getParameter("basic-salary") %></p>
-  <p>Benefits (Allowances): <%= request.getParameter("benefits") %></p>
-  <p>NSSF Contribution: <%= request.getParameter("nssf-contribution") %></p>
-  <p>Taxable Income: <%= request.getParameter("taxable-income") %></p>
-  <p>Personal Relief: <%= request.getParameter("personal-relief") %></p>
-  <p>PAYE: <%= request.getParameter("paye") %></p>
-  <p>NHIF Contribution: <%= request.getParameter("nhif-contribution") %></p>
-  <p>Net Pay: <%= request.getParameter("net-pay") %></p>
+  <p>Pay Period: <%= request.getAttribute("pay-period") %></p>
+  <p>Basic Salary: <%= request.getAttribute("basic-salary") %></p>
+  <p>Benefits (Allowances): <%= request.getAttribute("benefits") %></p>
+  <p>NSSF Contribution: <%= request.getAttribute("nssf-contribution") %></p>
+  <p>Taxable Income: <%= request.getAttribute("taxable-income") %></p>
+  <p>Personal Relief: <%= request.getAttribute("personal-relief") %></p>
+  <p>PAYE: <%= request.getAttribute("paye") %></p>
+  <p>NHIF Contribution: <%= request.getAttribute("nhif-contribution") %></p>
+  <p>Net Pay:  <%= request.getAttribute("net-pay") %></p>
 </body>
 </html>
