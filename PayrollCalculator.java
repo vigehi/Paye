@@ -60,8 +60,9 @@ public class PayrollCalculator extends JFrame {
     formPanel.add(new JLabel("Net Pay:"));
     formPanel.add(netPayField);
     JPanel buttonPanel = new JPanel();
-    buttonPanel.add(new JButton("Calculate"));
-    
+    JButton calculateButton = new JButton("Calculate");
+    buttonPanel.add(calculateButton);
+
     // Create a container panel to hold the ratePanel and formPanel
     JPanel centerPanel = new JPanel(new GridLayout(2, 1));
     centerPanel.add(ratePanel);
@@ -89,6 +90,29 @@ public class PayrollCalculator extends JFrame {
       e -> {
         if (yearlyRadioButton.isSelected()) {
           monthlyRadioButton.setSelected(false);
+        }
+      }
+    );
+
+    newRate.addActionListener(
+      e -> {
+        if (yearlyRadioButton.isSelected()) {
+
+        }
+      }
+    );
+
+    calculateButton.addActionListener(
+      e -> {
+        if (newRate.isSelected() && !basicSalaryField.getText().isEmpty()) {
+            float basicSalary = Float.parseFloat(basicSalaryField.getText());
+            float newRate = nssfRates.getNewRate(basicSalary);
+            nssfContributionField.setText(String.format("%.2f", newRate));
+        }
+        else if(oldRate.isSelected() && !basicSalaryField.getText().isEmpty()){
+            float basicSalary = Float.parseFloat(basicSalaryField.getText());
+            float oldRate = nssfRates.getOldRate(basicSalary);
+            nssfContributionField.setText(String.format("%.2f", oldRate));
         }
       }
     );
