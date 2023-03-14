@@ -18,5 +18,6 @@
   <p>PAYE: <%= request.getParameter("paye") %></p>
   <p>NHIF Contribution: <%= request.getParameter("nhif-contribution") %></p>
   <p>Net Pay: <%= request.getParameter("net-pay") %></p>
+  <p>Net Pay: <%= request.getParameter("net-pay") %></p>
 </body>
 </html>
