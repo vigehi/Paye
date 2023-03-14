@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Payroll Calculator Results</title>
+<title>FAQ</title>
 <link rel="stylesheet" type="text/css" href="css/results.css">
 </head>
 <body>
