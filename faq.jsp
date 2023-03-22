@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>FAQ</title>
-<link rel="stylesheet" type="text/css" href="css/results.css">
+	<meta charset="UTF-8">
+	<title>FAQ</title>
 </head>
-<body></body>
+<body>
+	<h1>FAQ
+    </h1>
+</body>
 </html>
